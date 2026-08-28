@@ -1,11 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maildev</title>
+
+    <!--
+      The MailDev site lives at /maildev/ (built from the gh-pages branch of
+      maildev/maildev). GitHub Pages cannot issue a 301 without a custom
+      domain, so this is the strongest redirect available: a zero-delay meta
+      refresh, a canonical naming the real page, and a JS replace() that
+      forwards query/hash without leaving a history entry behind.
+    -->
+    <meta http-equiv="refresh" content="0; url=https://maildev.github.io/maildev/" />
+    <link rel="canonical" href="https://maildev.github.io/maildev/" />
+
+    <title>MailDev</title>
+    <meta name="description" content="MailDev — the local email inbox for developers." />
+
+    <script>
+      location.replace(
+        'https://maildev.github.io/maildev/' + location.search + location.hash
+      )
+    </script>
+
+    <style>
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        margin: 4rem auto;
+        max-width: 32rem;
+        padding: 0 1.5rem;
+        line-height: 1.6;
+      }
+    </style>
   </head>
   <body>
-    <h1>maildev</h1>
+    <p>
+      Redirecting to
+      <a href="https://maildev.github.io/maildev/">maildev.github.io/maildev</a>…
+    </p>
   </body>
 </html>

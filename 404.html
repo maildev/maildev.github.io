@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      Catches root-level paths that do not exist here and forwards them to the
+      same path under /maildev/, so a guessed URL like
+      maildev.github.io/docs/quickstart/ lands correctly.
+
+      This is a convenience only, not an SEO mechanism: GitHub Pages serves
+      this file with a 404 status, so it passes no ranking signal. Paths under
+      /maildev/ never reach this file — the project page owns that prefix and
+      serves its own 404 — so there is no redirect loop.
+    -->
+    <meta http-equiv="refresh" content="0; url=https://maildev.github.io/maildev/" />
+
+    <title>Redirecting — MailDev</title>
+    <meta name="robots" content="noindex" />
+
+    <script>
+      var path = location.pathname.replace(/^\/+/, '')
+      location.replace(
+        'https://maildev.github.io/maildev/' + path + location.search + location.hash
+      )
+    </script>
+
+    <style>
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        margin: 4rem auto;
+        max-width: 32rem;
+        padding: 0 1.5rem;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Redirecting to
+      <a href="https://maildev.github.io/maildev/">maildev.github.io/maildev</a>…
+    </p>
+  </body>
+</html>
